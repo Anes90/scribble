@@ -355,10 +355,11 @@ class ScribbleNotifier extends ScribbleNotifierBase
 
   /// Converts a pointer event to the [Point] on the canvas.
   Point _getPointFromEvent(PointerEvent event) {
-    final p = kIsWeb || event.pressureMin == event.pressureMax
-        ? 0.5
-        : (event.pressure - event.pressureMin) /
-            (event.pressureMax - event.pressureMin);
+    // final p = kIsWeb || event.pressureMin == event.pressureMax
+    //     ? 0.5
+    //     : (event.pressure - event.pressureMin) /
+    //         (event.pressureMax - event.pressureMin);
+    const p = 0.5;
     return Point(
       event.localPosition.dx,
       event.localPosition.dy,
